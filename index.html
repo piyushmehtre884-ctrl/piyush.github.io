@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwapHub - Learn by Sharing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="index.html" class="logo">SwapHub</a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="homepage-main">
+        <div class="hero-section">
+            <h1>SwapHub</h1>
+            <p class="tagline">Learn by Sharing, Not Paying</p>
+        </div>
+
+        <div class="container options-container">
+            <a href="learner.html" class="card option-card">
+                <h2>I'm a Learner</h2>
+                <p>Find teachers and discover new skills.</p>
+            </a>
+            <a href="teacher.html" class="card option-card">
+                <h2>I'm a Teacher</h2>
+                <p>Share your knowledge and learn from others.</p>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SwapHub | Built with ❤️</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwapHub - Teacher Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="index.html" class="logo">SwapHub</a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="teacher-main">
+        <div class="container">
+            <h1>Become a SwapHub Teacher</h1>
+            <p>Share your expertise and connect with learners!</p>
+
+            <div class="card form-card">
+                <form id="teacherProfileForm">
+                    <div class="form-group">
+                        <label for="teacherName">Your Name:</label>
+                        <input type="text" id="teacherName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="skillTeach">Skill You Can Teach:</label>
+                        <input type="text" id="skillTeach" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="skillLearn">Skill You Want to Learn (Optional):</label>
+                        <input type="text" id="skillLearn">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Contact Email:</label>
+                        <input type="email" id="contactEmail" required>
+                    </div>
+                    <button type="submit" class="button">Create Profile</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SwapHub | Built with ❤️</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwapHub - Find Teachers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="index.html" class="logo">SwapHub</a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="learner-main">
+        <div class="container">
+            <h1>Find a Teacher</h1>
+            <p>Search for skills you want to learn and connect with teachers.</p>
+
+            <div class="search-section card">
+                <input type="text" id="skillSearch" placeholder="Search for a skill (e.g., 'Web Development')">
+                <button class="button" onclick="searchTeachers()">Search</button>
+            </div>
+
+            <div class="ai-suggestion-box card">
+                <h3>Ask AI what skill to learn next</h3>
+                <p>Feeling lost? Let our AI suggest something exciting!</p>
+                <button class="button small-button" onclick="showAISuggestion()">Get AI Suggestion</button>
+                <p id="aiSuggestion" class="suggestion-text"></p>
+            </div>
+
+            <div class="teacher-list" id="teacherList">
+                <!-- Sample teacher cards will be injected here by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SwapHub | Built with ❤️</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+/* Basic Resets & Body Styles */
+
+:root {
+    --primary-color: #AECAD6;
+    /* Soft Blue */
+    --secondary-color: #F8D9A8;
+    /* Soft Peach */
+    --accent-color: #B5EAD7;
+    /* Soft Green */
+    --text-color: #333;
+    --light-text-color: #666;
+    --white: #fff;
+    --light-gray: #f4f4f4;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* Header & Navigation */
+
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 0;
+    box-shadow: var(--box-shadow);
+}
+
+header nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--white);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+
+/* Main Content Styling */
+
+main {
+    flex: 1;
+    /* Allows main content to expand and push footer down */
+    padding: 40px 0;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+
+/* Hero Section (Homepage) */
+
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
+    margin-bottom: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.hero-section .tagline {
+    font-size: 1.5rem;
+    color: var(--white);
+    font-weight: 300;
+}
+
+
+/* Cards & Buttons */
+
+.card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.option-card {
+    display: block;
+    /* Make the whole card clickable */
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 40px 20px;
+}
+
+.option-card h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.option-card p {
+    font-size: 1.1rem;
+    color: var(--light-text-color);
+}
+
+.options-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    /* For button links */
+}
+
+.button:hover {
+    background-color: #F7C076;
+    /* Slightly darker peach */
+    transform: translateY(-2px);
+}
+
+.button.small-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+
+/* Forms (Teacher Page) */
+
+.form-card {
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--light-text-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(174, 202, 214, 0.3);
+    /* Soft focus glow */
+}
+
+
+/* Learner Page Specifics */
+
+.search-section {
+    display: flex;
+    gap: 10px;
+    padding: 25px;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.search-section input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+.search-section input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(174, 202, 214, 0.3);
+}
+
+.teacher-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.teacher-card {
+    padding: 25px;
+    text-align: center;
+}
+
+.teacher-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.teacher-card p {
+    font-size: 0.95rem;
+    color: var(--light-text-color);
+    margin-bottom: 0.7rem;
+}
+
+.teacher-card p strong {
+    color: var(--text-color);
+}
+
+.teacher-card .button {
+    margin-top: 10px;
+}
+
+
+/* AI Suggestion Box */
+
+.ai-suggestion-box {
+    text-align: center;
+    padding: 25px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    max-width: 600px;
+    margin: 30px auto;
+    box-shadow: var(--box-shadow);
+}
+
+.ai-suggestion-box h3 {
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.ai-suggestion-box p {
+    color: var(--white);
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+.ai-suggestion-box .button {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.ai-suggestion-box .button:hover {
+    background-color: #8AB4C2;
+    /* Darker primary */
+}
+
+.suggestion-text {
+    margin-top: 15px;
+    font-style: italic;
+    font-weight: 500;
+    min-height: 20px;
+    /* To prevent layout shift when text appears */
+}
+
+
+/* Footer */
+
+footer {
+    background-color: var(--text-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 40px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    header nav .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul {
+        margin-top: 15px;
+        justify-content: center;
+        width: 100%;
+    }
+    nav ul li {
+        margin: 0 10px;
+    }
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+    .hero-section .tagline {
+        font-size: 1.2rem;
+    }
+    .options-container {
+        grid-template-columns: 1fr;
+        /* Stack cards vertically on smaller screens */
+    }
+    .search-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .search-section input[type="text"] {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 40px 15px;
+    }
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    .hero-section .tagline {
+        font-size: 1rem;
+    }
+    .card {
+        padding: 20px;
+    }
+    .option-card h2 {
+        font-size: 1.5rem;
+    }
+    .form-card {
+        margin: 20px auto;
+    }
+}
